@@ -1,0 +1,15 @@
+{
+  "name": "asn2-suryakaran",
+  "version": "1.0.0",
+  "description": "Assignment 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Surya Karan Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2"
+  }
+}

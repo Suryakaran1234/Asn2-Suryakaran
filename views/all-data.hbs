@@ -1,0 +1,49 @@
+{{!-- Step 7: Design a new route “/allData” to display all Sales info in html table output using
+handlebars helpers/expression. --}}
+<h2>All Sales Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Invoice No</th>
+            <th>Image</th>
+            <th>Manufacturer</th>
+            <th>Class</th>
+            <th>Sales (in thousands)</th>
+            <th>Year Resale Value</th>
+            <th>Vehicle Type</th>
+            <th>Price (in thousands)</th>
+            <th>Horsepower</th>
+            <th>Wheelbase</th>
+            <th>Width</th>
+            <th>Length</th>
+            <th>Curb Weight</th>
+            <th>Fuel Capacity</th>
+            <th>Fuel Efficiency</th>
+            <th>Fuel Latest Launch</th>
+            <th>Power performance factor</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each salesData}}
+        <tr class="{{#if (equal this.class '')}}highlight{{/if}}">
+            <td>{{replaceBlank this.InvoiceNo}}</td>
+            <td><img src="{{this.image}}" alt="{{ replaceBlank this.Manufacturer}}"></td>
+            <td>{{replaceBlank this.Manufacturer}}</td>
+            <td>{{replaceBlank this.class}}</td>
+            <td>{{this.Sales_in_thousands}}</td>
+            <td>{{this.__year_resale_value}}</td>
+            <td>{{this.Vehicle_type}}</td>
+            <td>{{this.Price_in_thousands}}</td>
+            <td>{{this.Horsepower}}</td>
+            <td>{{this.Wheelbase}}</td>
+            <td>{{this.Width}}</td>
+            <td>{{this.Length}}</td>
+            <td>{{this.Curb_weight}}</td>
+            <td>{{this.Fuel_capacity}}</td>
+            <td>{{this.Fuel_efficiency}}</td>
+            <td>{{this.Latest_Launch}}</td>
+            <td>{{this.Power_perf_factor}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
